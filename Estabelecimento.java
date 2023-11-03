@@ -1,4 +1,4 @@
-public class Estab{
+public class Estabelecimento{
 
 private String tipoEstab;
 private String nomeEstab;
@@ -13,7 +13,7 @@ private String telefoneEstab;
 
 
 // Construtor
-public Estab(String tipoEstab, String nomeEstab, String ruaEstab, int numeroEstab, 
+public Estabelecimento(String tipoEstab, String nomeEstab, String ruaEstab, int numeroEstab, 
 String complementoEstab, String bairroEstab, String cidadeEstab, String ufEstab, 
 String cnpjEstab, String telefoneEstab){
 
