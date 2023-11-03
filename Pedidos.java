@@ -1,21 +1,23 @@
 public class Pedidos {
 
+    private int codPedido;
     private Estabelecimento estabelecimento;
     private Cliente cliente;
     private String formaPagemento;
     private String dataPedido;
     private int codigoEntrega;
-    private int [][] estoque;
-    // estoque = codItem + quantidade
+    private int [][] pedidoInfo;
+    //estoque = codItem + quantidade
 
-    public Pedidos(String formaPagemento, String dataPedido, 
-    int codigoEntrega, int [][] estoque, Estabelecimento estabelecimento, 
+    public Pedidos(int codPedido, String formaPagemento, String dataPedido, 
+    int codigoEntrega, int [][] pedidoInfo, Estabelecimento estabelecimento, 
     Cliente cliente){
 
+        this.codPedido = codPedido;
         this.formaPagemento = formaPagemento;
         this.dataPedido = dataPedido;
         this.codigoEntrega = codigoEntrega;
-        this.estoque = estoque;
+        this.pedidoInfo = pedidoInfo;
         this.estabelecimento = estabelecimento;
         this.cliente = cliente;
 
@@ -73,7 +75,16 @@ public class Pedidos {
 
     // Métodos
 
-    
+    public mostrarPedido(int codPedido){
+
+        System.out.println("Forma de pagamento: " + this.formaPagemento);
+        System.out.println("Data do pedido: " + this.dataPedido);
+        System.out.println("Código da entrega: " + this.codigoEntrega);
+        System.out.println("Pedido: " + this.pedidoInfo);
+        System.out.println("Estabelecimento: " + this.estabelecimento);
+        System.out.println("Cliente: " + this.cliente);
+
+    }
 
 
 

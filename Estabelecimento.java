@@ -11,7 +11,6 @@ public class Estabelecimento{
     private String cnpjEstab;
     private String telefoneEstab;
 
-
     // Construtor
     public Estabelecimento(String tipoEstab, String nomeEstab, String ruaEstab, int numeroEstab, String complementoEstab, String bairroEstab, String cidadeEstab, String ufEstab, 
     String cnpjEstab, String telefoneEstab){
@@ -38,6 +37,7 @@ public class Estabelecimento{
     public void setTipoEstab(String tipoEstab){
         this.tipoEstab = tipoEstab;
     }
+
 
     public String getNomeEstab(){
         return this.nomeEstab;
@@ -90,7 +90,7 @@ public class Estabelecimento{
     public String getUfEstab(){
         return this.ufEstab;
     }
-
+    
     public void setUfEstab(String ufEstab){
         this.ufEstab = ufEstab;
     }
@@ -115,10 +115,21 @@ public class Estabelecimento{
 
     public String cadastrarEstab(String tipoEstab, String nomeEstab, String ruaEstab, 
     int numeroEstab, String cnpjString, String telefoneEstab){
-        
+    
         return "Estabelecimento cadastrado com sucesso!";
     }
-
+    
+    public String validarEstab(String cnpjEstab){
+        return "Estabelecimento validado com sucesso!";
+    }
+    
+    public String cadastrarMenu(String nomeEstab, Item item){
+        return "Produto cadastrado no menu com sucesso!";
+    }
+    
+    public String cadastrarPromocao(String nomeEstab, Item item, double desconto){
+        return "Promoção cadastrada com sucesso!";
+    }
 
 }
 
