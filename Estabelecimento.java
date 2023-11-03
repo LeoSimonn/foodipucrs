@@ -11,7 +11,6 @@ private String ufEstab;
 private String cnpjEstab;
 private String telefoneEstab;
 
-
 // Construtor
 public Estabelecimento(String tipoEstab, String nomeEstab, String ruaEstab, int numeroEstab, 
 String complementoEstab, String bairroEstab, String cidadeEstab, String ufEstab, 
@@ -116,11 +115,20 @@ public void setTelefoneEstab(String telefoneEstab){
 
 public String cadastrarEstab(String tipoEstab, String nomeEstab, String ruaEstab, 
 int numeroEstab, String cnpjString, String telefoneEstab){
-    
+
     return "Estabelecimento cadastrado com sucesso!";
 }
 
+public String validarEstab(String cnpjEstab){
+    return "Estabelecimento validado com sucesso!";
+}
 
+public String cadastrarMenu(String nomeEstab, Item item){
+    return "Produto cadastrado no menu com sucesso!";
+}
+
+public String cadastrarPromocao(String nomeEstab, Item item, double desconto){
+    return "Promoção cadastrada com sucesso!";
 
 
 

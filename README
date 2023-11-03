@@ -52,3 +52,22 @@ CLASSES:
 + NOME (String nomeEntregador)
 + FORMA DE ENTREGA (String formaDeEntrega)
 + TELEFONE (String telefoneEntregador) 
+
+----------------------------------------------------------------------
+
+
+• (2,0) Desenvolver pelo menos 4 classes - X
+• (1,0) Cada classe deve conter pelo menos dois atributos, um método construtor
+e um método toString 
+• (0,5) Para cada atribto da classe, deve ser implementado um método Get e um
+método Set - X
+• (2,0) Cada classe deve conter pelo menos um método além dos principais
+vistos em aula
+• (1,0) Pelo menos dois métodos do trabalho devem receber um objeto como
+parâmetro
+• (1,5) Pelo menos três atributos do trabalho devem ser Arrays, e um precisa ser
+de algum tipo não primitivo (diferente de int, String, double, ...)
+• (2,0) Apresentação explicando as classes pensadas e como elas interagem entre
+si
+• (BONUS + 1,0) Um atributo sendo uma matriz (Array bidimensional) - X
+• (BONUS + 1,0) Implementar 6 classes ou mais - X
