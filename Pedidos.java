@@ -1,26 +1,21 @@
-public class Pedidos {
 
-    private int codPedido;
+
+
+public class Pedido {
+    private String formaPagamento;
+    private int[][] pedidoInfo;
     private Estabelecimento estabelecimento;
     private Cliente cliente;
-    private String formaPagemento;
-    private String dataPedido;
-    private int codigoEntrega;
-    private int [][] pedidoInfo;
-    //estoque = codItem + quantidade
+    private String codPedido;
+    private Date dataPedido;
 
-    public Pedidos(int codPedido, String formaPagemento, String dataPedido, 
-    int codigoEntrega, int [][] pedidoInfo, Estabelecimento estabelecimento, 
-    Cliente cliente){
-
-        this.codPedido = codPedido;
-        this.formaPagemento = formaPagemento;
-        this.dataPedido = dataPedido;
-        this.codigoEntrega = codigoEntrega;
+    public Pedido(String formaPagamento, int[][] pedidoInfo, Estabelecimento estabelecimento, Cliente cliente, String codPedido) {
+        this.formaPagamento = formaPagamento;
         this.pedidoInfo = pedidoInfo;
         this.estabelecimento = estabelecimento;
         this.cliente = cliente;
-
+        this.codPedido = codPedido;
+        this.dataPedido = new Date(); // Captura a data e hora atual
     }
 
     // Getters e Setters
@@ -75,17 +70,49 @@ public class Pedidos {
 
     // Métodos
 
-    public mostrarPedido(int codPedido){
+    public void mostrarPedido(String codPedido) {
+        Pedido pedido = registroPedidos.get(codPedido);
+        if (pedido != null) {
+            System.out.println("Forma de pagamento: " + pedido.getFormaPagamento());
+            System.out.println("Data do pedido: " + pedido.getDataPedido());
+            System.out.println("Código do pedido: " + pedido.getCodPedido());
+            System.out.println("Pedido: " + Arrays.deepToString(pedido.getPedidoInfo()));
+            System.out.println("Estabelecimento: " + pedido.getEstabelecimento().getNomeEstab());
+            System.out.println("Cliente: " + pedido.getCliente().getNome());
+        } else {
+            System.out.println("Pedido não encontrado.");
+        }
+    }
 
-        System.out.println("Forma de pagamento: " + this.formaPagemento);
-        System.out.println("Data do pedido: " + this.dataPedido);
-        System.out.println("Código da entrega: " + this.codigoEntrega);
-        System.out.println("Pedido: " + this.pedidoInfo);
-        System.out.println("Estabelecimento: " + this.estabelecimento);
-        System.out.println("Cliente: " + this.cliente);
+    public String realizarPedido(String formaPagamento, int[][] pedidoInfo, Estabelecimento estabelecimento, Cliente cliente) {
+        // ... método realizarPedido que você já definiu, que cria um Pedido e guarda no registro
 
+        // ... restante do método
+        return "Pedido realizado com sucesso! Código do pedido: " + codPedido;
     }
 
 
+    public String realizarPedido(String formaPagamento, int[][] pedidoInfo, Estabelecimento estabelecimento, Cliente cliente){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Forma de pagamento: " + formaPagamento);
+        System.out.println("Pedido: " + Arrays.deepToString(pedidoInfo));
+        System.out.println("Estabelecimento: " + estabelecimento.getNomeEstab());
+        System.out.println("Cliente: " + cliente.getNome()); 
+        System.out.print("Você confirma o pedido? (S/N): ");
+    
+        String acao = scanner.nextLine();
+        
+        if ("S".equalsIgnoreCase(acao)) {
+            String codPedido = UUID.randomUUID().toString(); // Gera um código de pedido único
+            System.out.println("Pedido realizado com sucesso! Código do pedido: " + codPedido);
+            return "Pedido realizado com sucesso! Código do pedido: " + codPedido;
+        } else {
+            System.out.println("Pedido cancelado!");
+            return "Pedido cancelado!";
+        }
+        scanner.close();
+    }
 
 }
+
+

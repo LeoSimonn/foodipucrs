@@ -33,6 +33,30 @@ public class Main{
         pedidos[8] = new Pedidos("PIX", "01/07/2020", 9, new int[][]{{1, 2}, {3, 4}}, estabelecimentos[8], clientes[8]);
         pedidos[9] = new Pedidos("Cartão", "01/07/2020", 10, new int[][]{{1, 2}, {3, 4}}, estabelecimentos[9], clientes[9]);
         
+        // Itens
+        Item[] itens = new Item[15];
+
+        itens[0] = new Item("Pizza", "Calabresa", 30.00, 1);
+        itens[1] = new Item("Pizza", "Portuguesa", 30.00, 2);
+        itens[2] = new Item("Pizza", "Quatro Queijos", 30.00, 3);
+        itens[3] = new Item("Confeitaria", "Torta de Morango", 40.00, 4);
+        itens[4] = new Item("Sorveteria", "Cascão de Chocolate", 15.00, 5);
+        itens[5] = new Item("Pizzaria", "Margherita", 32.00, 6);
+        itens[6] = new Item("Churrascaria", "Picanha na Tábua", 60.00, 7);
+        itens[7] = new Item("Restaurante Vegetariano", "Salada Primavera", 20.00, 8);
+        itens[8] = new Item("Peixaria", "Moqueca de Peixe", 45.00, 9);
+        itens[9] = new Item("Confeitaria", "Cheesecake de Frutas Vermelhas", 25.00, 10);
+        itens[10] = new Item("Sorveteria", "Sundae de Caramelo", 18.00, 11);
+        itens[11] = new Item("Pizzaria", "Napolitana", 35.00, 12);
+        itens[12] = new Item("Churrascaria", "Costela no Bafo", 70.00, 13);
+        itens[13] = new Item("Restaurante Vegetariano", "Hambúrguer de Quinoa", 22.00, 14);
+        itens[14] = new Item("Peixaria", "Sushi Variado", 50.00, 15);
+        
+
+
+
+
+        
 
         System.out.println("Iniciando o programa...");
 

@@ -127,8 +127,6 @@ public String cadastrarMenu(String nomeEstab, Item item){
     return "Produto cadastrado no menu com sucesso!";
 }
 
-public String cadastrarPromocao(String nomeEstab, Item item, double desconto){
-    return "Promoção cadastrada com sucesso!";
 
 
 
