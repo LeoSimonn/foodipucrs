@@ -82,14 +82,6 @@ public class Pedido {
         }
     }
 
-    public String realizarPedido(String formaPagamento, int[][] pedidoInfo, Estabelecimento estabelecimento, Cliente cliente) {
-        // ... método realizarPedido que você já definiu, que cria um Pedido e guarda no registro
-
-        // ... restante do método
-        return "Pedido realizado com sucesso! Código do pedido: " + codPedido;
-    }
-
-
     public String realizarPedido(String formaPagamento, int[][] pedidoInfo, Estabelecimento estabelecimento, Cliente cliente){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Forma de pagamento: " + formaPagamento);
