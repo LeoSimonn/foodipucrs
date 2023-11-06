@@ -1,5 +1,3 @@
+public class Entrega {
 
-
-public class Entrega{
-    
 }

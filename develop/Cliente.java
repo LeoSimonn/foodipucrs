@@ -1,3 +1,2 @@
-public class Cliente{
+public class Cliente {
 }
-

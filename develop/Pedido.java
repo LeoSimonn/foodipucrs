@@ -7,7 +7,8 @@ public class Pedido {
     private String codPedido;
     private Date dataPedido;
 
-    public Pedido(String formaPagamento, int[][] pedidoInfo, Estabelecimento estabelecimento, Cliente cliente, String codPedido) {
+    public Pedido(String formaPagamento, int[][] pedidoInfo, Estabelecimento estabelecimento, Cliente cliente,
+            String codPedido) {
         this.formaPagamento = formaPagamento;
         this.pedidoInfo = pedidoInfo;
         this.estabelecimento = estabelecimento;
@@ -18,51 +19,51 @@ public class Pedido {
 
     // Getters e Setters
 
-    public String getFormaPagemento(){
+    public String getFormaPagemento() {
         return this.formaPagemento;
     }
 
-    public void setFormaPagemento(String formaPagemento){
+    public void setFormaPagemento(String formaPagemento) {
         this.formaPagemento = formaPagemento;
     }
 
-    public String getDataPedido(){
+    public String getDataPedido() {
         return this.dataPedido;
     }
 
-    public void setDataPedido(String dataPedido){
+    public void setDataPedido(String dataPedido) {
         this.dataPedido = dataPedido;
     }
 
-    public int getCodigoEntrega(){
+    public int getCodigoEntrega() {
         return this.codigoEntrega;
     }
 
-    public void setCodigoEntrega(int codigoEntrega){
+    public void setCodigoEntrega(int codigoEntrega) {
         this.codigoEntrega = codigoEntrega;
     }
 
-    public int [][] getEstoque(){
+    public int[][] getEstoque() {
         return this.estoque;
     }
 
-    public void setEstoque(int [][] estoque){
+    public void setEstoque(int[][] estoque) {
         this.estoque = estoque;
     }
 
-    public Estabelecimento getEstabelecimento(){
+    public Estabelecimento getEstabelecimento() {
         return this.estabelecimento;
     }
 
-    public void setEstabelecimento(Estabelecimento estabelecimento){
+    public void setEstabelecimento(Estabelecimento estabelecimento) {
         this.estabelecimento = estabelecimento;
     }
 
-    public Cliente getCliente(){
+    public Cliente getCliente() {
         return this.cliente;
     }
 
-    public void setCliente(Cliente cliente){
+    public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
 
@@ -82,16 +83,17 @@ public class Pedido {
         }
     }
 
-    public String realizarPedido(String formaPagamento, int[][] pedidoInfo, Estabelecimento estabelecimento, Cliente cliente){
+    public String realizarPedido(String formaPagamento, int[][] pedidoInfo, Estabelecimento estabelecimento,
+            Cliente cliente) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Forma de pagamento: " + formaPagamento);
         System.out.println("Pedido: " + Arrays.deepToString(pedidoInfo));
         System.out.println("Estabelecimento: " + estabelecimento.getNomeEstab());
-        System.out.println("Cliente: " + cliente.getNome()); 
+        System.out.println("Cliente: " + cliente.getNome());
         System.out.print("Você confirma o pedido? (S/N): ");
-    
+
         String acao = scanner.nextLine();
-        
+
         if ("S".equalsIgnoreCase(acao)) {
             String codPedido = UUID.randomUUID().toString(); // Gera um código de pedido único
             System.out.println("Pedido realizado com sucesso! Código do pedido: " + codPedido);
@@ -104,5 +106,3 @@ public class Pedido {
     }
 
 }
-
-
