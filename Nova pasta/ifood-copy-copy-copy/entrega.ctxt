@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=entrega
+comment1.params=pedido\ entregador\ statusEntrega
+comment1.target=entrega(double,\ double,\ java.lang.String)
+comment2.params=
+comment2.target=double\ getPedido()
+comment3.params=
+comment3.target=double\ getEntregador()
+comment4.params=
+comment4.target=java.lang.String\ getStatusEntrega()
+comment5.params=
+comment5.target=java.lang.String\ getDetalhesEntrega()
+numComments=6

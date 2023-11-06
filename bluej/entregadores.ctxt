@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=entregadores
+comment1.params=nomeEntregador\ formaDeEntrega\ telefoneEntregador
+comment1.target=entregadores(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getNomeEntregador()
+comment3.params=
+comment3.target=java.lang.String\ getFormaDeEntrega()
+comment4.params=
+comment4.target=java.lang.String\ getTelefoneEntregador()
+numComments=5
