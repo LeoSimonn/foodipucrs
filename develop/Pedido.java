@@ -1,6 +1,4 @@
 
-
-
 public class Pedido {
     private String formaPagamento;
     private int[][] pedidoInfo;
