@@ -1,6 +1,4 @@
-
-
-public class entrega {
+public class Entrega {
     private double pedido;
     private double entregador;
     private String statusEntrega;
