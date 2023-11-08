@@ -1,4 +1,5 @@
 #BlueJ package file
+<<<<<<< HEAD
 dependency1.from=Pedido
 dependency1.to=Estabelecimento
 dependency1.type=UsesDependency
@@ -9,18 +10,31 @@ editor.fx.0.height=737
 editor.fx.0.width=814
 editor.fx.0.x=360
 editor.fx.0.y=58
+=======
+editor.fx.0.height=737
+editor.fx.0.width=814
+editor.fx.0.x=360
+editor.fx.0.y=32
+>>>>>>> cc3174db33345d246bd8b190d5bb3dd7287344cd
 objectbench.height=141
-objectbench.width=1511
+objectbench.width=1510
 package.divider.horizontal=0.6
-package.divider.vertical=0.8002136752136754
-package.editor.height=593
+package.divider.vertical=0.7980561555075595
+package.editor.height=585
 package.editor.width=1391
 package.editor.x=0
 package.editor.y=0
+<<<<<<< HEAD
 package.frame.height=848
 package.frame.width=1550
 package.numDependencies=2
 package.numTargets=6
+=======
+package.frame.height=840
+package.frame.width=1548
+package.numDependencies=0
+package.numTargets=2
+>>>>>>> cc3174db33345d246bd8b190d5bb3dd7287344cd
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8

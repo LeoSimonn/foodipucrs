@@ -16,12 +16,24 @@ public class entregadores
         return nomeEntregador;
     }
     
+    public void setNomeEntregador (String nomeEntregador){
+        this.nomeEntregador = nomeEntregador;
+    }
+    
     public String getFormaDeEntrega(){
         return formaDeEntrega;
     }
     
+    public void setFormaDeEntrega (String formaDeEntrega){
+        this.formaDeEntrega = formaDeEntrega;
+    }
+    
     public String getTelefoneEntregador(){
         return telefoneEntregador;
+    }
+    
+    public void setTelefoneEntregador (String telefoneEntregador){
+        this.telefoneEntregador = telefoneEntregador;
     }
     
 }

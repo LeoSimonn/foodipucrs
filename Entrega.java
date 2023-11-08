@@ -14,13 +14,25 @@ public class Entrega {
     public double getPedido() {
         return pedido;
     }
+    
+    public void setPedido (double pedido){
+        this.pedido = pedido;
+    }
 
     public double getEntregador() {
         return entregador;
     }
+    
+    public void setEntregador(){
+        this.entregador = entregador;
+    }
 
     public String getStatusEntrega() {
         return statusEntrega;
+    }
+    
+    public void setStatusEntrega(){
+        this.statusEntrega = statusEntrega;
     }
 
     public String getDetalhesEntrega() {
