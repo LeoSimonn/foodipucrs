@@ -1,8 +1,7 @@
 public class Testes {
     
     public static void main (String [] args) {
-        
-    
+            
         CatalogoDeEstabs catEstabs = new CatalogoDeEstabs(); 
         
         Estabelecimento[] listaDeEstabs = catEstabs.getEstabs(); 
@@ -11,7 +10,7 @@ public class Testes {
         
         System.out.println (listaDeEstabs[1].getTipoEstab()); 
 
-        System.out.println (testeCount); 
+        System.out.println (testeCount + "Iiissaaaa"); 
         
         for (int i = 0; i < listaDeEstabs.length; i++) {
             

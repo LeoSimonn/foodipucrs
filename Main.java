@@ -32,6 +32,9 @@ public class Main {
         if (menuOption == 1) {
             
             System.out.println("ESCOLHA O SUPERMERCADO: ");
+            System.out.println("---------------------------------------");
+            
+            // Lista os supermercados e permite que o usuário escolha um
             
             for (int i = 0; i < listaEstabs.length; i++) {
                 
@@ -45,8 +48,10 @@ public class Main {
             }
             
             int submenuOption = scanner.nextInt();
+            
+            // Relaciona a opção do usuário com o objeto real em Estabelecimento
+            
             int validOption = 0;
-             
             
             for (int i = 0; i < listaEstabs.length; i++) {
                 
@@ -63,17 +68,33 @@ public class Main {
                 }
             }
             
-            System.out.println ("ESCOLHA OS ITENS QUE VOCÊ QUER COMPRAR DO " + estabEscolhido.getNomeEstab()); 
-                        
-            for (int i = 0; i< listaItens.length; i++) {
+            System.out.println("");
+            System.out.println ("ESCOLHA OS ITENS QUE VOCÊ QUER COMPRAR DO: " + estabEscolhido.getNomeEstab());
+            System.out.println("---------------------------------------");
+            
+            System.out.println(estabEscolhido); 
+            System.out.println(listaItens[0].getEstab());  
+            
+            
+            //boolean teste = ( estabEscolhido == listaItens[0].getEstab() );  
+            
+            ///for (int i = 0; i < listaItens.length; i++) {
+             
+                 
+                //System.out.println(teste); 
                 
-                if (listaItens[i].getEstabelecimento() == estabEscolhido) {
-                    
-                    System.out.println("Gol do grêmio"); 
-                    
-                }
+            //}
+            
+            
+            //for (int i = 0; i< listaItens.length; i++) {
                 
-            }
+            //    if (listaItens[i].getEstabelecimento() == estabEscolhido) {
+                    
+            //        System.out.println("Gol do grêmio"); 
+                    
+            //    }
+                
+            //}
 
             
             

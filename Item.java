@@ -32,13 +32,13 @@ public class Item {
         
     }
     
-    public Estabelecimento getEstabelecimento() {
+    public Estabelecimento getEstab() {
         
         return this.estabelecimento; 
         
     }
     
-    public void setEstabelecimento(Estabelecimento estabelecimento) {
+    public void setEstab(Estabelecimento estabelecimento) {
         
         this.estabelecimento = estabelecimento; 
         
