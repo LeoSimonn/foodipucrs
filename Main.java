@@ -68,34 +68,28 @@ public class Main {
                 }
             }
             
+            // Lista os produtos do estabelecimento
+            
             System.out.println("");
             System.out.println ("ESCOLHA OS ITENS QUE VOCÊ QUER COMPRAR DO: " + estabEscolhido.getNomeEstab());
             System.out.println("---------------------------------------");
+            System.out.println(" COD");
             
-            System.out.println(estabEscolhido); 
-            System.out.println(listaItens[0].getEstab());  
-            
-            
-            //boolean teste = ( estabEscolhido == listaItens[0].getEstab() );  
-            
-            ///for (int i = 0; i < listaItens.length; i++) {
-             
-                 
-                //System.out.println(teste); 
+            for (int i = 0; i< listaItens.length; i++) {
                 
-            //}
-            
-            
-            //for (int i = 0; i< listaItens.length; i++) {
-                
-            //    if (listaItens[i].getEstabelecimento() == estabEscolhido) {
+                if (listaItens[i].getEstab().getNomeEstab().equals(estabEscolhido.getNomeEstab())) {
                     
-            //        System.out.println("Gol do grêmio"); 
+                    System.out.println("[ " + listaItens[i].getCodItem() + " ]" + " R$ " +  listaItens[i].getPrecoItem() + " - " + listaItens[i].getNomeItem()); 
                     
-            //    }
+                }
                 
-            //}
+            }
 
+            // Inclui itens no pedido
+            
+            System.out.println("");
+            System.out.println ("Para incluir itens no pedido, digite o código do produto e a quantidade. Para encerrar o pedido, digite -1");
+            
             
             
             
