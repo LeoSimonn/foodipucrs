@@ -1,108 +1,120 @@
+import java.util.Date; 
+import java.text.SimpleDateFormat;
 
 public class Pedido {
-    private String formaPagamento;
-    private int[][] pedidoInfo;
-    private Estabelecimento estabelecimento;
-    private Cliente cliente;
-    private String codPedido;
-    private Date dataPedido;
 
-    public Pedido(String formaPagamento, int[][] pedidoInfo, Estabelecimento estabelecimento, Cliente cliente,
-            String codPedido) {
-        this.formaPagamento = formaPagamento;
-        this.pedidoInfo = pedidoInfo;
-        this.estabelecimento = estabelecimento;
+    private Cliente cliente;
+    private int codPedido;
+    private Date dataPedido;
+    private int[][] itensPedido;
+    private String formaPagamento;
+
+
+    public Pedido(Cliente cliente, int codPedido, Date dataPedido, int[][] itensPedido, String formaPagamento) {
+        
         this.cliente = cliente;
         this.codPedido = codPedido;
-        this.dataPedido = new Date(); // Captura a data e hora atual
-    }
+        this.dataPedido = dataPedido;
+        this.itensPedido = itensPedido;
+        this.formaPagamento = formaPagamento;
+        
+        }
+        
 
     // Getters e Setters
 
-    public String getFormaPagemento() {
-        return this.formaPagemento;
+    public String getFormaPagamento() {
+        
+        return this.formaPagamento;
+    
     }
 
-    public void setFormaPagemento(String formaPagemento) {
-        this.formaPagemento = formaPagemento;
+    public void setFormaPagemento(String formaPagamento) {
+        
+        this.formaPagamento = formaPagamento;
+   
     }
 
-    public String getDataPedido() {
+    
+    public Date getDataPedido() {
+        
         return this.dataPedido;
+        
     }
 
-    public void setDataPedido(String dataPedido) {
+    public void setDataPedido(Date dataPedido) {
+        
         this.dataPedido = dataPedido;
+    
     }
 
-    public int getCodigoEntrega() {
-        return this.codigoEntrega;
+    
+    
+    public int getCodPedido() {
+        
+        return this.codPedido;
+    
     }
 
-    public void setCodigoEntrega(int codigoEntrega) {
-        this.codigoEntrega = codigoEntrega;
+    public void setCodigoPedido(int codPedido) {
+        
+        this.codPedido = codPedido;
+    
     }
 
-    public int[][] getEstoque() {
-        return this.estoque;
+    
+    
+    public int[][] getItensPedido() {
+        
+        return this.itensPedido;
+    
     }
 
-    public void setEstoque(int[][] estoque) {
-        this.estoque = estoque;
+    public void setItensPedido(int[][] intensPedido) {
+        
+        this.itensPedido = itensPedido;
+    
     }
 
-    public Estabelecimento getEstabelecimento() {
-        return this.estabelecimento;
-    }
 
-    public void setEstabelecimento(Estabelecimento estabelecimento) {
-        this.estabelecimento = estabelecimento;
-    }
 
     public Cliente getCliente() {
+        
         return this.cliente;
+    
     }
 
     public void setCliente(Cliente cliente) {
+    
         this.cliente = cliente;
+    
     }
 
-    // Métodos
-
-    public void mostrarPedido(String codPedido) {
-        Pedido pedido = registroPedidos.get(codPedido);
-        if (pedido != null) {
-            System.out.println("Forma de pagamento: " + pedido.getFormaPagamento());
-            System.out.println("Data do pedido: " + pedido.getDataPedido());
-            System.out.println("Código do pedido: " + pedido.getCodPedido());
-            System.out.println("Pedido: " + Arrays.deepToString(pedido.getPedidoInfo()));
-            System.out.println("Estabelecimento: " + pedido.getEstabelecimento().getNomeEstab());
-            System.out.println("Cliente: " + pedido.getCliente().getNome());
-        } else {
-            System.out.println("Pedido não encontrado.");
-        }
+    
+    // Método toString
+    
+    public String toString() {
+        
+        return "Feito, " + this.cliente.getNomeCli() + "! O pedido código número: " + this.codPedido + " foi realizado com sucesso no dia " + getDataFormatada(); 
     }
+    
+    
+    
+    // Método para converter a data do pedido (timestamp para DD/MM/AAAA)
+    
+    public String getDataFormatada() {
+        
+        // Define o formato desejado
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-    public String realizarPedido(String formaPagamento, int[][] pedidoInfo, Estabelecimento estabelecimento,
-            Cliente cliente) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Forma de pagamento: " + formaPagamento);
-        System.out.println("Pedido: " + Arrays.deepToString(pedidoInfo));
-        System.out.println("Estabelecimento: " + estabelecimento.getNomeEstab());
-        System.out.println("Cliente: " + cliente.getNome());
-        System.out.print("Você confirma o pedido? (S/N): ");
+        // Formata a data para o formato desejado
+        String dataFormatada = sdf.format(this.dataPedido);
 
-        String acao = scanner.nextLine();
-
-        if ("S".equalsIgnoreCase(acao)) {
-            String codPedido = UUID.randomUUID().toString(); // Gera um código de pedido único
-            System.out.println("Pedido realizado com sucesso! Código do pedido: " + codPedido);
-            return "Pedido realizado com sucesso! Código do pedido: " + codPedido;
-        } else {
-            System.out.println("Pedido cancelado!");
-            return "Pedido cancelado!";
-        }
-        scanner.close();
+        return dataFormatada;
     }
+    
+    
+
+    
 
 }
