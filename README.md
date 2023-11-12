@@ -26,8 +26,6 @@ LEONARDO
 + COD DA ENTREGA (int codigoEntrega)
 
 
-
-
 OTÁVIO
 -----------------------------------------------
 • CLIENTES (class Cliente)

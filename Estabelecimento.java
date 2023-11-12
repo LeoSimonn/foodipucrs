@@ -131,4 +131,14 @@ public class Estabelecimento {
         return "Promoção cadastrada com sucesso!";
     }
 
+    // Metodo toString
+
+    public String TesteEstabelecimentoto() {
+        return "Tipo de Estabelecimento: " + this.tipoEstab + "\nNome do Estabelecimento: "
+                + this.nomeEstab + "\nRua: " + this.ruaEstab + "\nNúmero: " + this.numeroEstab
+                + "\nComplemento: " + this.complementoEstab + "\nBairro: " + this.bairroEstab
+                + "\nCidade: " + this.cidadeEstab + "\nUF: " + this.ufEstab + "\nCNPJ: "
+                + this.cnpjEstab + "\nTelefone: " + this.telefoneEstab;
+    }
+
 }

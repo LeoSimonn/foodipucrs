@@ -38,6 +38,14 @@ public class Entrega {
     public String getDetalhesEntrega() {
         return detalhesEntrega;
     }
+
+    // Metodo toString
+
+    public String toString() {
+        return "Pedido: " + this.pedido + "\nEntregador: " + this.entregador + "\nStatus de Entrega: " + this.statusEntrega;
+    }
+    
+
 }
 
 

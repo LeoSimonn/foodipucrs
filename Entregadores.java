@@ -33,5 +33,10 @@ public class Entregadores{
     public void setTelefoneEntregador (String telefoneEntregador){
         this.telefoneEntregador = telefoneEntregador;
     }
+
+    //Metodo ToString
+    public String toString(){
+        return "Nome do Entregador: " + this.nomeEntregador + "\nForma de Entrega: " + this.formaDeEntrega + "\nTelefone do Entregador: " + this.telefoneEntregador;
+    }
     
 }
