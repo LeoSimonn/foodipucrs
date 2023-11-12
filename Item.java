@@ -78,11 +78,18 @@ public class Item {
         
         this.precoItem = precoItem; 
     }
+
+    // Metodo
+
+    
+
     
     // Metodo toString
     public String toString() {
         return "Código do Item: " + this.codItem + "\nEstabelecimento: " + this.estabelecimento + "\nNome do Item: " + this.nomeItem + "\nCategoria do Item: " + this.categoriaItem + "\nPreço do Item: " + this.precoItem;
     }
+
+
     
     
 }
