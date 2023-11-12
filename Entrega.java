@@ -4,7 +4,7 @@ public class Entrega {
     private String statusEntrega;
     private String detalhesEntrega;
 
-    public entrega(double pedido, double entregador, String statusEntrega) {
+    public Entrega(double pedido, double entregador, String statusEntrega) {
         this.pedido = pedido;
         this.entregador = entregador;
         this.statusEntrega = statusEntrega;
