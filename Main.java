@@ -23,6 +23,7 @@ public class Main {
         
         int menuOption = 0; 
         int numeradorMenu = 1;
+        boolean validCadastro = false; 
         
         long timestampAtual = System.currentTimeMillis();
         Date dataAtual = new Date(timestampAtual);
@@ -85,106 +86,117 @@ public class Main {
                 System.out.println(clienteAtual);
                 
                 menuOption = 0; 
+                validCadastro = true;
                 
             }
             
             
             else if (menuOption == 2) {
-            
-                System.out.println("ESCOLHA O SUPERMERCADO: ");
-                System.out.println("---------------------------------------");
                 
-                // Lista os supermercados e permite que o usuário escolha um
-                
-                for (int i = 0; i < listaEstabs.length; i++) {
+                if (validCadastro == false) {
                     
-                    if (listaEstabs[i].getTipoEstab().equals("Supermercado")) {
+                    System.out.println("Para fazer um pedido, você precisa se cadastrar no C Food!"); 
+                    System.out.println("");
                     
-                        System.out.println( numeradorMenu + " - " + listaEstabs[i].getNomeEstab() );
-                        
-                        numeradorMenu++;
-                    }
+                    menuOption = 0;
                     
                 }
                 
-                int submenuOption = scanner.nextInt();
-                
-                // Relaciona a opção do usuário com o objeto real em Estabelecimento
-                
-                int validOption = 0;
-                
-                for (int i = 0; i < listaEstabs.length; i++) {
+                else {
+                    System.out.println("ESCOLHA O SUPERMERCADO: ");
+                    System.out.println("---------------------------------------");
                     
-                    if (listaEstabs[i].getTipoEstab().equals("Supermercado")) {
+                    // Lista os supermercados e permite que o usuário escolha um
                     
-                        validOption++;
+                    for (int i = 0; i < listaEstabs.length; i++) {
                         
-                        if (validOption == submenuOption) {
+                        if (listaEstabs[i].getTipoEstab().equals("Supermercado")) {
+                        
+                            System.out.println( numeradorMenu + " - " + listaEstabs[i].getNomeEstab() );
                             
-                            estabEscolhido = listaEstabs[i]; 
+                            numeradorMenu++;
+                        }
+                        
+                    }
+                    
+                    int submenuOption = scanner.nextInt();
+                    
+                    // Relaciona a opção do usuário com o objeto real em Estabelecimento
+                    
+                    int validOption = 0;
+                    
+                    for (int i = 0; i < listaEstabs.length; i++) {
+                        
+                        if (listaEstabs[i].getTipoEstab().equals("Supermercado")) {
+                        
+                            validOption++;
+                            
+                            if (validOption == submenuOption) {
+                                
+                                estabEscolhido = listaEstabs[i]; 
+                                
+                            }
+                            
+                        }
+                    }
+                    
+                    // Lista os produtos do estabelecimento
+                    
+                    System.out.println("");
+                    System.out.println ("ESCOLHA OS ITENS QUE VOCÊ QUER COMPRAR DO: " + estabEscolhido.getNomeEstab());
+                    System.out.println("---------------------------------------");
+                    System.out.println(" COD");
+                    
+                    for (int i = 0; i< listaItens.length; i++) {
+                        
+                        if (listaItens[i].getEstab().getNomeEstab().equals(estabEscolhido.getNomeEstab())) {
+                            
+                            System.out.println("[ " + listaItens[i].getCodItem() + " ]" + " R$ " +  listaItens[i].getPrecoItem() + " - " + listaItens[i].getNomeItem()); 
                             
                         }
                         
                     }
-                }
-                
-                // Lista os produtos do estabelecimento
-                
-                System.out.println("");
-                System.out.println ("ESCOLHA OS ITENS QUE VOCÊ QUER COMPRAR DO: " + estabEscolhido.getNomeEstab());
-                System.out.println("---------------------------------------");
-                System.out.println(" COD");
-                
-                for (int i = 0; i< listaItens.length; i++) {
+        
+                    // Inclui itens no pedido
                     
-                    if (listaItens[i].getEstab().getNomeEstab().equals(estabEscolhido.getNomeEstab())) {
-                        
-                        System.out.println("[ " + listaItens[i].getCodItem() + " ]" + " R$ " +  listaItens[i].getPrecoItem() + " - " + listaItens[i].getNomeItem()); 
-                        
-                    }
+                    System.out.println("");
+                    System.out.println ("Para incluir itens no pedido, digite o código do produto e a quantidade. Aqui, você C-Food e só pode escolher 3 itens por pedido. :) ");
+                    System.out.println("");
                     
-                }
-    
-                // Inclui itens no pedido
-                
-                System.out.println("");
-                System.out.println ("Para incluir itens no pedido, digite o código do produto e a quantidade. Aqui, você C-Food e só pode escolher 3 itens por pedido. :) ");
-                System.out.println("");
-                
-                int[][] itensPedido = new int[3][2];
+                    int[][] itensPedido = new int[3][2];
+                                
+                    for (int l = 0; l < itensPedido.length; l++) {
+                        
+                        for (int c = 0; c < itensPedido[0].length; c++) {
                             
-                for (int l = 0; l < itensPedido.length; l++) {
-                    
-                    for (int c = 0; c < itensPedido[0].length; c++) {
-                        
-                        if( c == 0 ) {
-                        
-                            System.out.println("Insira o código do produto: ");
-                            itensPedido[l][c] = scanner.nextInt();
-                            System.out.println("");
+                            if( c == 0 ) {
+                            
+                                System.out.println("Insira o código do produto: ");
+                                itensPedido[l][c] = scanner.nextInt();
+                                System.out.println("");
+                                
+                            }
+                            
+                            else if (c == 1) {
+                                
+                                System.out.println("Insira a quantidade desejada: ");
+                                itensPedido[l][c] = scanner.nextInt();
+                                System.out.println("");
+                            }
+                            
                             
                         }
                         
-                        else if (c == 1) {
-                            
-                            System.out.println("Insira a quantidade desejada: ");
-                            itensPedido[l][c] = scanner.nextInt();
-                            System.out.println("");
-                        }
-                        
-                        
                     }
                     
-                }
-                
-                
-                Pedido pedidoAtual = new Pedido(clienteAtual, 5, dataAtual, itensPedido, "Cartão de Crédito");
-                
-                System.out.println(pedidoAtual);
-                System.out.println("");
-                
-                menuOption = 0; 
-                            
+                    
+                    Pedido pedidoAtual = new Pedido(clienteAtual, 7, dataAtual, itensPedido, "Cartão de Crédito");
+                    
+                    System.out.println(pedidoAtual);
+                    System.out.println("");
+                    
+                    menuOption = 0; 
+                }        
             }
             
             

@@ -39,6 +39,7 @@ public class Estabelecimento {
         this.tipoEstab = tipoEstab;
     }
 
+    
     public String getNomeEstab() {
         return this.nomeEstab;
     }
@@ -47,6 +48,7 @@ public class Estabelecimento {
         this.nomeEstab = nomeEstab;
     }
 
+    
     public String getRuaEstab() {
         return this.ruaEstab;
     }
@@ -55,6 +57,7 @@ public class Estabelecimento {
         this.ruaEstab = ruaEstab;
     }
 
+    
     public int getNumeroEstab() {
         return this.numeroEstab;
     }
@@ -63,6 +66,7 @@ public class Estabelecimento {
         this.numeroEstab = numeroEstab;
     }
 
+    
     public String getComplementoEstab() {
         return this.complementoEstab;
     }
@@ -71,6 +75,7 @@ public class Estabelecimento {
         this.complementoEstab = complementoEstab;
     }
 
+    
     public String getBairroEstab() {
         return this.bairroEstab;
     }
@@ -79,6 +84,7 @@ public class Estabelecimento {
         this.bairroEstab = bairroEstab;
     }
 
+    
     public String getCidadeEstab() {
         return this.cidadeEstab;
     }
@@ -87,6 +93,7 @@ public class Estabelecimento {
         this.cidadeEstab = cidadeEstab;
     }
 
+    
     public String getUfEstab() {
         return this.ufEstab;
     }
@@ -95,6 +102,7 @@ public class Estabelecimento {
         this.ufEstab = ufEstab;
     }
 
+    
     public String getCnpjEstab() {
         return this.cnpjEstab;
     }
@@ -103,6 +111,7 @@ public class Estabelecimento {
         this.cnpjEstab = cnpjEstab;
     }
 
+    
     public String getTelefoneEstab() {
         return this.telefoneEstab;
     }

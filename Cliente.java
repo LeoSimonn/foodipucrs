@@ -152,10 +152,29 @@ public class Cliente {
         
     }
     
+    
+    // Método toString 
+    
     public String toString() {
         
         return "Cliente: " + this.nomeCli + " | CPF: " + this.cpfCli + " cadastrado com sucesso!";
         
     }
     
+    
+    // Método adicional
+    
+    public boolean validaSeEhGaucho() {
+        
+        boolean gaucho = false; 
+        
+        if (this.ufCli.equalsIgnoreCase("RS")) {
+         
+            gaucho = true; 
+            
+        } 
+        
+        
+        return gaucho; 
+    }
 }
