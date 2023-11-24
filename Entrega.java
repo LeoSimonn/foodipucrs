@@ -4,11 +4,13 @@ public class Entrega {
     private String statusEntrega;
     private String detalhesEntrega;
 
-    public entrega(double pedido, double entregador, String statusEntrega) {
+    public Entrega(double pedido, double entregador, String statusEntrega) {
+        
         this.pedido = pedido;
         this.entregador = entregador;
         this.statusEntrega = statusEntrega;
         this.detalhesEntrega = "Pedido: " + pedido + ", Entregador: " + entregador + ", Status de Entrega: " + statusEntrega;
+        
     }
 
     public double getPedido() {
@@ -38,6 +40,14 @@ public class Entrega {
     public String getDetalhesEntrega() {
         return detalhesEntrega;
     }
+
+    // Metodo toString
+
+    public String toString() {
+        return "Pedido: " + this.pedido + "\nEntregador: " + this.entregador + "\nStatus de Entrega: " + this.statusEntrega;
+    }
+    
+
 }
 
 

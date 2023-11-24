@@ -1,12 +1,10 @@
+public class Entregadores{
 
-
-public class entregadores
-{
     private String nomeEntregador;
     private String formaDeEntrega;
     private String telefoneEntregador;
     
-    public entregadores(String nomeEntregador, String formaDeEntrega, String telefoneEntregador){
+    public Entregadores(String nomeEntregador, String formaDeEntrega, String telefoneEntregador){
         this.nomeEntregador = nomeEntregador;
         this.formaDeEntrega = formaDeEntrega;
         this.telefoneEntregador = telefoneEntregador;
@@ -34,6 +32,11 @@ public class entregadores
     
     public void setTelefoneEntregador (String telefoneEntregador){
         this.telefoneEntregador = telefoneEntregador;
+    }
+
+    //Metodo ToString
+    public String toString(){
+        return "Nome do Entregador: " + this.nomeEntregador + "\nForma de Entrega: " + this.formaDeEntrega + "\nTelefone do Entregador: " + this.telefoneEntregador;
     }
     
 }

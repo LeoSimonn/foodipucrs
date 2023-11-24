@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Entregadores
+comment1.params=nomeEntregador\ formaDeEntrega\ telefoneEntregador
+comment1.target=Entregadores(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getNomeEntregador()
+comment3.params=nomeEntregador
+comment3.target=void\ setNomeEntregador(java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ getFormaDeEntrega()
+comment5.params=formaDeEntrega
+comment5.target=void\ setFormaDeEntrega(java.lang.String)
+comment6.params=
+comment6.target=java.lang.String\ getTelefoneEntregador()
+comment7.params=telefoneEntregador
+comment7.target=void\ setTelefoneEntregador(java.lang.String)
+comment8.params=
+comment8.target=java.lang.String\ toString()
+numComments=9

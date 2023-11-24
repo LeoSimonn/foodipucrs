@@ -103,13 +103,11 @@ public class Pedido {
     // Método para converter a data do pedido (timestamp para DD/MM/AAAA)
     
     public String getDataFormatada() {
-        
         // Define o formato desejado
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
         // Formata a data para o formato desejado
         String dataFormatada = sdf.format(this.dataPedido);
-
         return dataFormatada;
     }
     

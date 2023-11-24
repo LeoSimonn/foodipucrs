@@ -12,9 +12,8 @@ public class Estabelecimento {
     private String telefoneEstab;
 
     // Construtor
-    public Estabelecimento(String tipoEstab, String nomeEstab, String ruaEstab, int numeroEstab,
-            String complementoEstab, String bairroEstab, String cidadeEstab, String ufEstab,
-            String cnpjEstab, String telefoneEstab) {
+    public Estabelecimento(String tipoEstab, String nomeEstab, String ruaEstab, int numeroEstab, String complementoEstab, String bairroEstab, String cidadeEstab, String ufEstab,
+    String cnpjEstab, String telefoneEstab) {
 
         this.tipoEstab = tipoEstab;
         this.nomeEstab = nomeEstab;
@@ -120,24 +119,27 @@ public class Estabelecimento {
         this.telefoneEstab = telefoneEstab;
     }
 
-    // Métodos da classe
+    // Métodos da classe - Valida se o estabelecimento é 
 
-    public String cadastrarEstab(String tipoEstab, String nomeEstab, String ruaEstab,
-            int numeroEstab, String cnpjString, String telefoneEstab) {
+    public boolean validSeEstabEhGaucho() {
 
-        return "Estabelecimento cadastrado com sucesso!";
+        if (this.ufEstab.equalsIgnoreCase("RS")) {
+            
+            return true; 
+            
+        }
+        
+        return false;
     }
+    
+    // Metodo toString
 
-    public String validarEstab(String cnpjEstab) {
-        return "Estabelecimento validado com sucesso!";
-    }
-
-    public String cadastrarMenu(String nomeEstab, Item item) {
-        return "Produto cadastrado no menu com sucesso!";
-    }
-
-    public String cadastrarPromocao(String nomeEstab, Item item, double desconto) {
-        return "Promoção cadastrada com sucesso!";
+    public String toString() {
+        return "Tipo de Estabelecimento: " + this.tipoEstab + "\nNome do Estabelecimento: "
+                + this.nomeEstab + "\nRua: " + this.ruaEstab + "\nNúmero: " + this.numeroEstab
+                + "\nComplemento: " + this.complementoEstab + "\nBairro: " + this.bairroEstab
+                + "\nCidade: " + this.cidadeEstab + "\nUF: " + this.ufEstab + "\nCNPJ: "
+                + this.cnpjEstab + "\nTelefone: " + this.telefoneEstab;
     }
 
 }
