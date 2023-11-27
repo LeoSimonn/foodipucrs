@@ -1,7 +1,7 @@
 #BlueJ class context
-comment0.target=Entregadores
+comment0.target=Entregador
 comment1.params=nomeEntregador\ formaDeEntrega\ telefoneEntregador
-comment1.target=Entregadores(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment1.target=Entregador(java.lang.String,\ java.lang.String,\ java.lang.String)
 comment2.params=
 comment2.target=java.lang.String\ getNomeEntregador()
 comment3.params=nomeEntregador
@@ -16,4 +16,6 @@ comment7.params=telefoneEntregador
 comment7.target=void\ setTelefoneEntregador(java.lang.String)
 comment8.params=
 comment8.target=java.lang.String\ toString()
-numComments=9
+comment9.params=cliente
+comment9.target=boolean\ ehXara(Cliente)
+numComments=10

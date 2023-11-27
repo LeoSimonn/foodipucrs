@@ -79,8 +79,19 @@ public class Item {
         this.precoItem = precoItem; 
     }
 
-    // Metodo
-
+    // Metodo Especial - avalia se um item é barato
+    
+    public boolean avaliaPreco() {
+        
+        if (this.precoItem > 5.00) {
+            
+            return false;
+        }
+        
+        return true; 
+    }
+    
+    
     
 
     

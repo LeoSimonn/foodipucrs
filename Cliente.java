@@ -165,16 +165,13 @@ public class Cliente {
     // Método adicional
     
     public boolean validaSeEhGaucho() {
-        
-        boolean gaucho = false; 
-        
+                
         if (this.ufCli.equalsIgnoreCase("RS")) {
          
-            gaucho = true; 
+            return true; 
             
         } 
         
-        
-        return gaucho; 
+        return false; 
     }
 }

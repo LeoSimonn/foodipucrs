@@ -119,7 +119,7 @@ public class Estabelecimento {
         this.telefoneEstab = telefoneEstab;
     }
 
-    // Métodos da classe - Valida se o estabelecimento é 
+    // Método Especial - Valida se o estabelecimento é do RS 
 
     public boolean validSeEstabEhGaucho() {
 

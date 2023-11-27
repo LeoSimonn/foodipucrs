@@ -5,6 +5,9 @@ public class Main {
 
     public static void main(String[] args) {
 
+        long timestampAtual = System.currentTimeMillis();
+        Date dataAtual = new Date(timestampAtual);
+        
         CatalogoDeEstabs catEstabs = new CatalogoDeEstabs();
         Estabelecimento[] listaEstabs = catEstabs.getEstabs();
         Scanner scanner = new Scanner(System.in);
@@ -15,6 +18,11 @@ public class Main {
         Estabelecimento estabEscolhido = null;
 
         Cliente clienteAtual = new Cliente("", "", "", "", 0, "", "", "", "");
+        
+        Pedido pedidoAtual = new Pedido(clienteAtual, 1, dataAtual, null , "Cartão de Crédito"); 
+        
+        Entregador entregadorAtual = new Entregador("Jonleno", "Bicicleta", "(51) 99618.2548");
+        Entrega entregaAtual = new Entrega(null, entregadorAtual, "Seu pedido está em preparo"); 
 
         System.out.println("Olá, seja bem vindo ao C-Food!");
         System.out.println("---------------------------------------");
@@ -26,8 +34,7 @@ public class Main {
 
         boolean validCadastro = false; 
         
-        long timestampAtual = System.currentTimeMillis();
-        Date dataAtual = new Date(timestampAtual);
+
 
         while (menuOption == 0) {
 
@@ -38,8 +45,11 @@ public class Main {
             System.out.println("3 - Fazer Pedido de Restaurantes");
             System.out.println("4 - Acompanhar Pedido");
             System.out.println("5 - Validar se Cliente é Gaúcho");
-            System.out.println("6 - Validar se Estabelecimento é Gaúcho");
-            System.out.println("7 - Validar se Estabelecimento é Gaúcho");
+            System.out.println("6 - Validar se Estabelecimento do Pedido é Gaúcho");
+            System.out.println("7 - Contar quantos Estabelecimentos são do RS no C-Food");
+            System.out.println("8 - Avaliar preço de Itens");
+            System.out.println("9 - Descobrir qual o Item mais caro do C-Food"); 
+            System.out.println("10 - Investigar se o entregador é xará do cliente");
             
             menuOption = scanner.nextInt();
 
@@ -111,6 +121,7 @@ public class Main {
                 }
                 
                 else {
+                    
                     System.out.println("ESCOLHA O SUPERMERCADO: ");
                     System.out.println("---------------------------------------");
                     
@@ -159,13 +170,12 @@ public class Main {
                         
                         if (listaItens[i].getEstab().getNomeEstab().equals(estabEscolhido.getNomeEstab())) {
                             
-                        System.out.println("[ " + listaItens[i].getCodItem() + " ]" + " R$ " +  listaItens[i].getPrecoItem() + " - " + listaItens[i].getNomeItem()); 
+                            System.out.println("[ " + listaItens[i].getCodItem() + " ]" + " R$ " +  listaItens[i].getPrecoItem() + " - " + listaItens[i].getNomeItem()); 
                             
                         }
                     
                     }
                     
-
         
                     // Inclui itens no pedido
                         
@@ -199,7 +209,9 @@ public class Main {
                     }
                         
                     
-                    Pedido pedidoAtual = new Pedido(clienteAtual, 1, dataAtual, itensPedido, "Cartão de Crédito");
+                    pedidoAtual.setItensPedido(itensPedido);
+                    
+                    entregaAtual.setPedido(pedidoAtual);  
                     
                     System.out.println(pedidoAtual);
                     System.out.println("");
@@ -271,7 +283,7 @@ public class Main {
                         
                         if (listaItens[i].getEstab().getNomeEstab().equals(estabEscolhido.getNomeEstab())) {
                             
-                        System.out.println("[ " + listaItens[i].getCodItem() + " ]" + " R$ " +  listaItens[i].getPrecoItem() + " - " + listaItens[i].getNomeItem()); 
+                            System.out.println("[ " + listaItens[i].getCodItem() + " ]" + " R$ " +  listaItens[i].getPrecoItem() + " - " + listaItens[i].getNomeItem()); 
                             
                         }
                     
@@ -310,7 +322,9 @@ public class Main {
                     }
                         
                     
-                    Pedido pedidoAtual = new Pedido(clienteAtual, 1, dataAtual, itensPedido, "Cartão de Crédito");
+                    pedidoAtual.setItensPedido(itensPedido);
+                    
+                    entregaAtual.setPedido(pedidoAtual); 
                     
                     System.out.println(pedidoAtual);
                     System.out.println("");
@@ -318,8 +332,192 @@ public class Main {
                     menuOption = 0; 
                         
                 }
-        
             }
+            
+            else if (menuOption == 4) {
+
+                if (pedidoAtual.getItensPedido().length < 0) {
+                    
+                    System.out.println("Para acompanhar um pedido, você precisa primeiro fazer um pedido no C Food!"); 
+                    System.out.println("");
+                    
+                    menuOption = 0;
+                    
+                }
+                
+                else {
+                    
+                    System.out.println(entregaAtual); 
+                    System.out.println("");
+                    
+                    if (entregaAtual.getEntregador().getFormaDeEntrega().equalsIgnoreCase("Bicicleta")) {
+                        
+                        System.out.println("Este pedido será entregue de bicicleta. O planeta agradece! :) ");
+                        
+                    }
+                    
+                    else {
+                        
+                        System.out.println("Este pedido não será entregue de bicicleta. O planeta chora!. :( ");
+                        
+                    }
+                    
+                    menuOption = 0; 
+         
+                }
+            
+            }
+            
+            else if (menuOption == 5) {
+                
+                if (validCadastro == false) {
+                    
+                    System.out.println("Para fazer este teste, você precisa se cadastrar no C Food!"); 
+                    System.out.println("");
+                    
+                    menuOption = 0;
+                    
+                }
+                
+                else {
+                    
+                    if (clienteAtual.validaSeEhGaucho()) {
+                        
+                        System.out.println("Este cliente é bagual, tchê!");
+                        System.out.println("");
+                        
+                    }
+                    
+                    else {
+                        
+                        System.out.println("Este cliente NÃO é gaúcho!");
+                        System.out.println("");
+                        
+                    }
+                    
+                    
+                    menuOption = 0; 
+                }
+                
+            }
+            
+            else if (menuOption == 6) {
+                
+                if (entregaAtual.getPedido() == null) {
+                    
+                    System.out.println("Para fazer este teste, você precisa primeiro fazer um pedido no C Food!"); 
+                    System.out.println("");
+                    
+                    menuOption = 0;
+                    
+                }
+                
+                else {
+                    
+                    if (estabEscolhido.validSeEstabEhGaucho()) {
+                        
+                        System.out.println("O estabelecimento escolhido é bagual, tchê!");
+                        System.out.println("");
+                        
+                    }
+                    
+                    else {
+                        
+                        System.out.println("Você escolheu um estabelecimento de outro estado. Seu pedido pode demorar um pouco para chegar. :(");
+                        System.out.println("");
+                        
+                    }
+                    
+                    menuOption = 0;
+                }
+                
+                
+            }
+            
+            else if (menuOption == 7) {
+                
+                System.out.println("O C-Food valoriza o RS. Atualmente contamos com " + catEstabs.countEstabsDoRs() + " estabelecimentos gaúchos cadastrados em nossa base");
+                System.out.println("");
+                
+                menuOption = 0;
+            }
+            
+            else if (menuOption == 8) {
+                
+                System.out.println("Digite o código de um dos itens da lista para avaliar seu preço: ");
+                System.out.println("");
+                
+                for (int i = 0; i < listaItens.length; i++) {
+                    
+                    System.out.println("[ " + listaItens[i].getCodItem() + " ]" + " R$ " +  listaItens[i].getPrecoItem() + " - " + listaItens[i].getNomeItem());
+                    
+                }
+                
+                System.out.println("Insira o código do produto para avaliar: ");
+                int escolha = (scanner.nextInt() - 1); 
+                 
+                
+                if (listaItens[escolha].avaliaPreco()) {
+                 
+                    System.out.println("O item escolhido " + listaItens[escolha].getNomeItem() + " é barato, pois custa menos de R$ 5,00. :) ");
+                    System.out.println("");
+                    
+                }
+                
+                else {
+                 
+                    System.out.println("O item escolhido " + listaItens[escolha].getNomeItem() + " é caro, pois custa mais de R$ 5,00. :( ");
+                    System.out.println("");
+                    
+                }
+                
+                
+                menuOption = 0;
+            }
+            
+            else if (menuOption == 9) {
+                
+                System.out.println("Atualmente, o item mais caro do C-Food é: " + catItens.maiorPreco().getNomeItem() + ". Pertence ao estabelecimento " 
+                + catItens.maiorPreco().getEstab().getNomeEstab() + " e é vendido pela bagatela de R$ " + catItens.maiorPreco().getPrecoItem() + " reais."); 
+                System.out.println("");
+                
+                menuOption = 0;
+                
+            }
+            
+            else if (menuOption == 10) {
+                
+                if (validCadastro == false) {
+                    
+                    System.out.println("Para fazer este teste, você precisa se cadastrar no C Food!"); 
+                    System.out.println("");
+                    
+                    menuOption = 0;
+                    
+                }
+                
+                else {
+                    
+                    if (entregadorAtual.ehXara(clienteAtual)) {
+                    
+                        System.out.println("Uau, que coincidência, a pessoa entregadora tem o mesmo nome que você. Como prêmio do destino, você ganhou um mousse de chocolate!");
+                        System.out.println("");
+                    
+                    }
+                
+                    else {
+                    
+                        System.out.println("Desculpe a frustração, mas você e a pessoa entregadora não possuem o mesmo nome."); 
+                        System.out.println("");
+                    
+                    }
+                    
+                    menuOption = 0;
+                }
+                
+             
+            }
+            
         }
     }
 }
